@@ -12,16 +12,22 @@
         android:id="@+id/button_http_url_connection_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HttpURLConnection GET" />
+        android:text="HttpURLConnection GET"
+        android:layout_gravity="center"
+        />
 
     <Button
         android:id="@+id/button_ok_http_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OkHttpClient GET" />
+        android:text="OkHttpClient GET"
+        android:layout_gravity="center"
+        />
     <Button
-        android:id="@+id/button_pinned_ok_http"
+        android:id="@+id/button_pinned_ok_http_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PinnedOkHttpClient" />
+        android:text="PinnedOkHttpClient GET"
+        android:layout_gravity="center"
+        />
 </LinearLayout>

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button okHttpClientPinnedGetButton = (Button) findViewById(R.id.button_pinned_ok_http);
+        Button okHttpClientPinnedGetButton = (Button) findViewById(R.id.button_pinned_ok_http_get);
         okHttpClientPinnedGetButton.setOnClickListener( new View.OnClickListener() {
 
             @Override
