@@ -30,4 +30,27 @@
         android:text="PinnedOkHttpClient GET"
         android:layout_gravity="center"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textview_logs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:height="40dp"
+        android:textSize="20dp"
+        android:inputType="textMultiLine"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:enabled="false"
+        android:scrollbars="vertical"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
 </LinearLayout>
