@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
             "sha256/BRvG5szpZyF6p3BXtjMBvcFuZDYOrrUzhx2UqcYhkwE=",
             "sha256/k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws="};
     TextView logsStuff;
+    String receivedData = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 HttpURLConnectionGetRequest requestTypeOne = new HttpURLConnectionGetRequest();
-                requestTypeOne.execute(request_endpoint);
+
+                try {
+                    receivedData = requestTypeOne.execute(request_endpoint).get().toString();;
+                    System.out.println("receivedData = "+receivedData);
+                    logsStuff.setText(receivedData);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -44,7 +53,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 OkHttpClientGetRequest requestTypeTwo = new OkHttpClientGetRequest();
-                requestTypeTwo.execute(request_endpoint);
+
+
+                try {
+                    receivedData = requestTypeTwo.execute(request_endpoint).get().toString();;
+                    System.out.println("receivedData = "+receivedData);
+                    logsStuff.setText(receivedData);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -56,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 OkHttpClientPinnedGetRequest requestTypeThree = new OkHttpClientPinnedGetRequest();
               // requestTypeThree.execute(request_endpoint,hostname);
-                String receivedData = "";
+
                 try {
                     receivedData = requestTypeThree.execute(request_endpoint,hostname, pinningCerts[0],pinningCerts[1]).get().toString();
                     System.out.println("receivedData = "+receivedData);
