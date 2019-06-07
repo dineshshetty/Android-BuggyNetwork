@@ -19,3 +19,14 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#proguard on anything except below
+#-keep class com.dns.** { *; }
+
+##-keep public class MainActivity extends AppCompatActivity
+#-keep class !com.dns.buggynetwork.OkHttpClientPinnedGetRequest {
+#*;
+#}
+
+
+#-keep class !com.dns.**,!com.dnss.** { *; } --> proguard just these
