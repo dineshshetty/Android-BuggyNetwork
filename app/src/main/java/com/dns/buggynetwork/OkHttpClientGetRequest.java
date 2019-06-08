@@ -20,11 +20,8 @@ class OkHttpClientGetRequest extends AsyncTask<String, Void, String> {
             URL siteURL = new URL(parameters[0]);
             System.out.println("YES OkHttpClientGetRequest ");
 
-
             OkHttpClient httpConn = new OkHttpClient();
-
             Request httpRequest = new Request.Builder().url(siteURL).build();
-
             Response httpResponse = httpConn.newCall(httpRequest).execute();
 
         } catch (Exception e) {

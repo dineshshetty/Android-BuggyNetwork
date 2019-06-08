@@ -9,6 +9,14 @@
     >
 
     <Button
+        android:id="@+id/button_simple_no_ssl_http_url_connection_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HttpURLConnection GET (PLAINTEXT)"
+        android:layout_gravity="center"
+        />
+
+    <Button
         android:id="@+id/button_http_url_connection_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

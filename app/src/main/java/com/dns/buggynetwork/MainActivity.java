@@ -11,6 +11,8 @@ import java.net.URISyntaxException;
 
 public class MainActivity extends AppCompatActivity {
     String request_endpoint = "https://twitter.com/Din3zh";
+    String request_endpoint_insecure = "http://example.com/";
+    String request_endpoint_insecure_ssl = "https://github.com/";
     String[] pinningCerts = new String[]  {
             "sha256/BRvG5szpZyF6p3BXtjMBvcFuZDYOrrUzhx2UqcYhkwE=",
             "sha256/k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws="};
@@ -26,6 +28,25 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(hostname);
         logsStuff = (TextView) findViewById(R.id.textview_logs);
 
+
+        Button plainTextHttpURLConnectionGetButton = (Button) findViewById(R.id.button_simple_no_ssl_http_url_connection_get);
+        plainTextHttpURLConnectionGetButton.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                HttpURLConnectionGetRequest insecureRequestTypeOne = new HttpURLConnectionGetRequest();
+
+                try {
+                    receivedData = insecureRequestTypeOne.execute(request_endpoint_insecure).get().toString();;
+                    System.out.println("receivedData = "+receivedData);
+                    logsStuff.setText(receivedData);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         Button httpURLConnectionGetButton = (Button) findViewById(R.id.button_http_url_connection_get);
         httpURLConnectionGetButton.setOnClickListener( new View.OnClickListener() {

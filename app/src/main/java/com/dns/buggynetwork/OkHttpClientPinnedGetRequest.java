@@ -16,9 +16,9 @@ class OkHttpClientPinnedGetRequest extends AsyncTask<String, Void, String> {
         try {
             URL siteURL = new URL(parameters[0]);
 
-            String hostname = parameters[1];
-            String pinnedCert1 = parameters[2];
-            String pinnedCert2 = parameters[3];
+            String hostname = parameters[1]; //eg: twitter.com
+            String pinnedCert1 = parameters[2]; //eg: "sha256/BRvG5szpZyF6p3BXtjMBvcFuZDYOrrUzhx2UqcYhkwE="
+            String pinnedCert2 = parameters[3]; //eg: "sha256/k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws="
             System.out.println("YES OkHttpClientPinnedGetRequest ");
 
             CertificatePinner pinnedCertificatesList = new CertificatePinner.Builder()
