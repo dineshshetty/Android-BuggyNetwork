@@ -30,7 +30,10 @@ class OkHttpClientPinnedGetRequest extends AsyncTask<String, Void, String> {
                     .certificatePinner(pinnedCertificatesList)
                     .build();
 
+
             Request httpRequest = new Request.Builder().url(siteURL).build();
+            httpRequest.cacheControl().noCache();
+            httpRequest.cacheControl().noStore();
 
             Response httpResponse = httpConn.newCall(httpRequest).execute();
 

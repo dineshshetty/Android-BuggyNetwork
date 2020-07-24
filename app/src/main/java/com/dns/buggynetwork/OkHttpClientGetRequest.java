@@ -22,6 +22,8 @@ class OkHttpClientGetRequest extends AsyncTask<String, Void, String> {
 
             OkHttpClient httpConn = new OkHttpClient();
             Request httpRequest = new Request.Builder().url(siteURL).build();
+            httpRequest.cacheControl().noCache();
+            httpRequest.cacheControl().noStore();
             Response httpResponse = httpConn.newCall(httpRequest).execute();
 
         } catch (Exception e) {

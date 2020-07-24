@@ -19,18 +19,24 @@ class HttpURLConnectionGetRequest extends AsyncTask<String, Void, String> {
             System.out.println("YES HttpURLConnectionGetRequest ");
             HttpURLConnection httpConn = (HttpURLConnection) siteURL.openConnection();
             httpConn.setRequestMethod("GET");
+            httpConn.setUseCaches(false);
+            httpConn.addRequestProperty("Cache-Control", "no-cache");
+            httpConn.addRequestProperty("Cache-Control", "max-age=0");
+            httpConn.addRequestProperty("Pragma", "no-cache");
+            httpConn.addRequestProperty("Pragma", "no-store");
+            httpConn.setDefaultUseCaches(false);
             httpConn.connect();
 
             InputStream inputStream = httpConn.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String line = bufferedReader.readLine();
-            System.out.println(line);
+            System.out.println("got = "+line);
+            return "SUCCESS";
         } catch (Exception e) {
             e.printStackTrace();
             return "ERROR";
         }
-        return "SUCCESS";
     }
 
     @Override
