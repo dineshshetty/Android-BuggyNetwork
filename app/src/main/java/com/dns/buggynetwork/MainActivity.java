@@ -1,18 +1,18 @@
 package com.dns.buggynetwork;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class MainActivity extends AppCompatActivity {
-    String request_endpoint = "https://twitter.com/Din3zh";
+    String request_endpoint = "https://raw.githubusercontent.com/dineshshetty/Android-BuggyNetwork/master/README.md";
     String request_endpoint_insecure = "http://example.com/";
-    String request_endpoint_insecure_ssl = "https://github.com/";
     String[] pinningCerts = new String[]  {
             "sha256/BRvG5szpZyF6p3BXtjMBvcFuZDYOrrUzhx2UqcYhkwE=",
             "sha256/k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws="};

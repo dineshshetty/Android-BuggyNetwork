@@ -1,64 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    >
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/buggynetwork_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/buggynetwork_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_simple_no_ssl_http_url_connection_get"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/button_simple_no_ssl_http_url_connection_get"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="HttpURLConnection GET (PLAINTEXT)"
-        android:layout_gravity="center"
-        />
+        android:text="Send HTTP Request"
+        app:layout_constraintTop_toBottomOf="@+id/buggynetwork_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp" />
 
     <Button
         android:id="@+id/button_http_url_connection_get"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="HttpURLConnection GET"
-        android:layout_gravity="center"
-        />
+        android:text="Send HTTPS Request 1"
+        app:layout_constraintTop_toBottomOf="@+id/button_simple_no_ssl_http_url_connection_get"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/button_ok_http_get"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="OkHttpClient GET"
-        android:layout_gravity="center"
-        />
+        android:text="Send HTTPS Request"
+        app:layout_constraintTop_toBottomOf="@+id/button_http_url_connection_get"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp" />
+
     <Button
         android:id="@+id/button_pinned_ok_http_get"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="PinnedOkHttpClient GET"
-        android:layout_gravity="center"
-        />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:text="Send Pinned HTTPS Request"
+        app:layout_constraintTop_toBottomOf="@+id/button_ok_http_get"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp" />
 
     <TextView
         android:id="@+id/textview_logs"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:height="40dp"
-        android:textSize="20dp"
-        android:inputType="textMultiLine"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:enabled="false"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
         android:scrollbars="vertical"
-        />
+        android:textColor="@color/notesColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_pinned_ok_http_get" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
